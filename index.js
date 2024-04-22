@@ -15,6 +15,10 @@ db.connect((err) => {
 
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  response(200, "Hello World", "Welcome", res);
+});
+
 //Menampilkan data di tabel
 app.get("/barang", (req, res) => {
   const sql = "SELECT*FROM tbl_brg";
